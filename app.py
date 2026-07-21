@@ -2,10 +2,29 @@ import streamlit as st
 import pickle
 import requests
 import time
+import os
 
 # -----------------------------
 # Load Data
 # -----------------------------
+def download_file(url, filename):
+
+    if not os.path.exists(filename):
+        response = requests.get(url)
+
+        with open(filename, "wb") as file:
+            file.write(response.content)
+
+
+movies_url = "https://huggingface.co/datasets/LIKITHASHREESR/movie-recommender-files/resolve/main/movies.pkl"
+
+similarity_url = "https://huggingface.co/datasets/LIKITHASHREESR/movie-recommender-files/resolve/main/similarity.pkl"
+
+
+download_file(movies_url, "movies.pkl")
+download_file(similarity_url, "similarity.pkl")
+
+
 movies = pickle.load(open("movies.pkl", "rb"))
 similarity = pickle.load(open("similarity.pkl", "rb"))
 
