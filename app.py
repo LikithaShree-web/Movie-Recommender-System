@@ -33,7 +33,7 @@ movie_titles = movies["title"].values
 # -----------------------------
 # TMDB API Key
 # -----------------------------
-API_KEY = "f001e638db9173c9bc57b9da8cd22d34"   # Replace with your API key
+API_KEY = st.secrets["TMDB_API_KEY"]   # Replace with your API key
 
 # -----------------------------
 # Fetch Movie Poster
