@@ -16,9 +16,9 @@ def download_file(url, filename):
             file.write(response.content)
 
 
-movies_url = "https://huggingface.co/datasets/LIKITHASHREESR/movie-recommender-files/resolve/main/movies.pkl"
+movies_url = "https://huggingface.co/datasets/LIKITHASHREESR/movie-recommender-files/resolve/main/movies.pkl?download=true"
 
-similarity_url = "https://huggingface.co/datasets/LIKITHASHREESR/movie-recommender-files/resolve/main/similarity.pkl"
+similarity_url = "https://huggingface.co/datasets/LIKITHASHREESR/movie-recommender-files/resolve/main/similarity.pkl?download=true"
 
 
 download_file(movies_url, "movies.pkl")
